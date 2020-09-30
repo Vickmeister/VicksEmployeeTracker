@@ -1,0 +1,24 @@
+{
+  "name": "vicksemployeetracker",
+  "version": "1.0.0",
+  "description": "sql homework assignment - employee tracker",
+  "main": "connection.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vickmeister/VicksEmployeeTracker.git"
+  },
+  "author": "Vick Manjarrez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vickmeister/VicksEmployeeTracker/issues"
+  },
+  "homepage": "https://github.com/Vickmeister/VicksEmployeeTracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "mysql": "^2.18.1"
+  }
+}
