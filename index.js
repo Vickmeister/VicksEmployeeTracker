@@ -75,7 +75,23 @@ function addNewDepartment(askDeptName) {
     console.log(askDeptName);
     connection.query("INSERT INTO departmentTable (name) VALUE ('" + askDeptName + "')", function (err, result) {
         if (err) throw err;
-        console.log("New department created!");
+        console.log("Your new department has been created!");
+        employeeTracker();
+    });
+};
+
+function addNewRole(newRoleInfo) {
+    connection.query("INSERT INTO roleTable (title, salary, department_id) VALUE ('" + newRoleInfo.newRoleTitle + "', '" + newRoleInfo.newRoleSalary + "', '" + newRoleInfo.newDeptId + "')", function (err, result) {
+        if (err) throw err;
+        console.log("Your new role has been created!");
+        employeeTracker();
+    });
+};
+
+function addNewEmployee(newEmpInfo) {
+    connection.query("INSERT INTO employeeTable (firstName, lastName, role_id, manager_id) VALUE ('" + newEmpInfo.newEmpFirstName + "', '" + newEmpInfo.newEmpLastName + "', '" + newEmpInfo.empRoleId + "', '" + newEmpInfo.generalManagerId + "')", function (err, result) {
+        if (err) throw err;
+        console.log("Your new employee has been created!");
         employeeTracker();
     });
 };
@@ -97,14 +113,6 @@ const newRoleQuestions = [
         type: "number"
     }
 ]
-
-function addNewRole(newRoleInfo) {
-    connection.query("INSERT INTO roleTable (title, salary, department_id) VALUE ('" + newRoleInfo.newRoleTitle + "', '" + newRoleInfo.newRoleSalary + "', '" + newRoleInfo.newDeptId + "')", function (err, result) {
-        if (err) throw err;
-        console.log("Your new role has been created!");
-        employeeTracker();
-    });
-};
 
 const newEmployeeQuestions = [
     {
@@ -128,14 +136,6 @@ const newEmployeeQuestions = [
         type: "number"
     }
 ]
-
-function addNewEmployee(newEmpInfo) {
-    connection.query("INSERT INTO employeeTable (firstName, lastName, role_id, manager_id) VALUE ('" + newEmpInfo.newEmpFirstName + "', '" + newEmpInfo.newEmpLastName + "', '" + newEmpInfo.empRoleId + "', '" + newEmpInfo.generalManagerId + "')", function (err, result) {
-        if (err) throw err;
-        console.log("New employee created!");
-        employeeTracker();
-    });
-};
 
 function displayDepts() {
     connection.query("SELECT * FROM departmentTable", function (err, result) {
