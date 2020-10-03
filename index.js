@@ -180,4 +180,4 @@ function updateEmployeeRole(updateEmpInfo) {
         console.log("Employee role has been updated");
         employeeTracker();
     });
-};
+}; 
