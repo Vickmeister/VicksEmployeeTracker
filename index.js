@@ -58,7 +58,7 @@ function askUserForChoice() {
         message: "Choose your command",
         type: "list",
         choices: ["Add Department", "Add Role", "Add Employee", "View Departments", "View Roles", "View Employees", "Update Employee Role", "Exit"]
-    }]).then(response => response.firstQuestion)
+    }]).then(response => response.firstCommand)
 };
 
 function addDepartmentName() {
